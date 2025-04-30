@@ -101,11 +101,14 @@ def manage_users():
     users = User.query.all()
     return render_template('manage_users.html', users=users)
 
+'''
 @app.route('/drone-location', methods=['GET'])
 @login_required
 def drone_location_api():
-    print(f"Debug: Returning drone location: {drone_location}")
-    return jsonify(drone_location)
+    print(f"Debug: Returning drone location: {drone_location()}")
+    return jsonify(drone_location())
+
+'''
 
 @app.route('/update_drone_location', methods=['POST'])
 def update_drone_location():
@@ -119,6 +122,7 @@ def update_drone_location():
     except Exception as e:
         print(f"Error updating location: {e}")
         return jsonify({'status': 'error', 'message': str(e)}), 500
+
 
 @app.route('/set_location', methods=['POST'])
 @login_required
@@ -191,9 +195,9 @@ def request_changes():
 def drone_location():
     try:
         # Request the location from the Raspberry Pi via VPN
-        response = requests.get("http://10.0.0.2:5000/drone-location")
+        response = requests.get("http://127.0.0.1:5001/drone-location")
         data = response.json()
-        return jsonify(data)
+        return data
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
 

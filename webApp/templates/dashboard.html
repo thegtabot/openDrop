@@ -237,12 +237,15 @@
         }
 
         function fetchDroneLocation() {
+            console.log('Fetching drone location')
             fetch('/drone-location')
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'success') {
+                        console.log('Drone location:', data.latitude, data.longitude);
                         updateDronePosition(data.latitude, data.longitude);
                     } else {
+                        console.log('System failed to obtain drone location.')
                         console.error('Failed to get drone location:', data.message);
                     }
                 })
