@@ -3,7 +3,11 @@ Software written for drone delivery network.
 Credits: Malcolm Gilmore, Juston Armstrong
 
 
-This is open source software written for drones operating on raspberry pi + pixhawk flight controllers. The network is fully autonomous and uses a VPN tunnel to establish a secure connection between the drones and the webserver. 
+This is open source software written for drones operating on raspberry pi + pixhawk flight controllers. The network is fully autonomous and uses a VPN tunnel to establish a secure connection between the drones and the desired webserver. 
+The system uses a hub and spoke model topology to achieve dynamic endpoint allocation, so that both the drones and users will maintain a stable connection to one another regardless of the geographic location. 
+
+For now the current software we've written is only compatible with a pixhawk flight controller. The preferred RTOS (Real Time Operating System) for the flight controller is ChibiOS, and the raspberry Pi is using native PiOS. 
+The hardware and software support will be expanded on over time. 
 
 
 
