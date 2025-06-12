@@ -14,8 +14,11 @@ The hardware and software support will be expanded on over time.
 
 
 
+![IMG_20241105_183323470](https://github.com/user-attachments/assets/9688f004-19ce-4b8f-8f5a-844debf6ad76)
 
 
+
+![IMG_20241016_221405456](https://github.com/user-attachments/assets/e767d031-eabe-4f77-bc7e-08b25723fa06)
 
 
 
